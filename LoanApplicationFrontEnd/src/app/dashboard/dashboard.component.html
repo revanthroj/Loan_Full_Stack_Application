@@ -1,0 +1,41 @@
+<!-- <br><br>
+<div class="container">
+    <div class="row">
+        <button style="font-size: x-large;" class="col btn btn-info" (click)="applyLaon()">Apply Loan</button>
+        <button style="font-size: x-large;" class=" col btn btn-info" (click)="loanDetails()">Loan Details</button>
+        <button style="font-size: x-large;" class="col btn btn-info" (click)="onExit()">Exit</button>
+    </div>
+</div> -->
+<app-sidemenubar></app-sidemenubar>
+<div class="container-responsive container">
+    <div class="card-group cards">
+        <div class="card first">
+          <img class="card-img-top first" src="../../assets/Allura - UI Windows.png" alt="Card image cap">
+          <div class="card-body firstBody">
+            <h5 class="card-title">Apply Your Loan</h5>
+            <p class="card-text">You can apply your loan just by clicking the button</p>
+            <button type="button" class="btn btn-primary" [routerLink]="['/ApplyLoan']" routerLinkActive="router-link-active"  >Apply Loan</button>
+          </div>
+        </div>
+        <div class="card second">
+          <img class="card-img-top second" src="../../assets/Allura - Feedback Session.png" alt="Card image cap">
+          <div class="card-body secondBody">
+            <h5 class="card-title">Loan Details</h5> 
+            <p class="card-text">Applied loan details will be displayed here in the table formate</p>
+            <button type="button" class="btn btn-primary" [routerLink]="['/LoanDetails']" routerLinkActive="router-link-active" >Loan Details</button>
+          </div>
+        </div>
+        <div class="card third">
+          <img class="card-img-top exitImg" src="../../assets/Allura - Social Media.png" alt="Card image cap">
+          <div class="card-body thirdBody">
+            <h5 class="card-title">Exit</h5>
+            <p class="card-text">Have a nice day</p>
+            <br><br>
+            <button  type="button" (click)="onExit()" class="btn btn-primary" [routerLink]="['/Exit']" >Exit</button>
+          </div>
+        </div>
+      </div>
+      <!-- <div>
+        <img src="../../assets/confirm.png">
+      </div> -->
+</div>

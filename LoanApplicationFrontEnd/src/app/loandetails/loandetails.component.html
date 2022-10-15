@@ -1,0 +1,41 @@
+
+<div>
+<table class="table table-bordered table-hover">
+    <thead class="table-primary">
+      <th>ID</th>
+      <th>Username</th>
+      <th>Loan Amount</th>
+      <th>Loan Period</th>
+      <th>Trade Date</th>
+      <th>Loan StartDate</th>
+      <th>Maturity Date</th>
+      <th>Interest Rate</th>
+      <th>Payment Frequency</th>
+      <th>Payment Schedule</th>
+      <th>Payment Term</th>
+    </thead>
+    <tbody class="table-active">
+      <tr *ngFor="let item of arObj | paginate: { itemsPerPage: 10, currentPage: p }; ">
+        <td class="table-primary">{{item.customerId}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.loanAmount | number:'1.2-2'}}</td>
+        <td>{{item.loanPeriod}}</td>
+        <td>{{item.tradeDate}}</td>
+        <td>{{item.loanStartDate}}</td>
+        <td> {{item.maturityDate}} </td>
+        <td>{{item.interestRate}}</td>
+        <td> {{item.paymentFrequency}} </td>
+        <td> {{item.paymentSchedule}}
+        </td>
+        <td>{{item.paymentTerm}}
+        </td>
+      </tr>
+    </tbody>
+</table>
+<div class="pagination justify-content-center">
+<pagination-controls (pageChange)="p = $event" style="float:left;"></pagination-controls>
+</div>
+</div>
+<button (click)="onPaymentSchedule()">View paymentSchedule</button>
+
+
