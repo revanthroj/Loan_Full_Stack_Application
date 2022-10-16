@@ -1,5 +1,5 @@
+<app-header></app-header>
 <br>
-
 
 <div class=" container col-sm-6 col-md-6 col-lg-6">
     <h1 style="font-size: large;" for="">Enter Your Details</h1>
@@ -8,7 +8,7 @@
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                 <mat-label for="">Username</mat-label>
                 <input style="height: 20px;" matInput #username="ngModel" ngModel name="username" type="text" minlength="3" maxlength="20"
-                placeholder="Enter the username" [pattern]="name_pattern" required>
+                placeholder="Enter the full name" [pattern]="name_pattern" required>
                 <mat-error *ngIf="username.touched && !username.valid">Please Enter valid userame</mat-error>
                 <!-- <mat-error *ngIf="">Please Enter the userame</mat-error> -->
                 <mat-error *ngIf="username.errors?.pattern">Please enter alphabets only</mat-error>
@@ -16,7 +16,7 @@
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                 <mat-label for=""> Amount</mat-label>
                 <input style="height: 20px;" matInput #laonAmount="ngModel" ngModel name="laonAmount" type="text" placeholder="Enter the laonAmount" [pattern]="amount_pattern" required>
-                <mat-error *ngIf="laonAmount.touched && !laonAmount.valid">Please Enter the laonAmount</mat-error>
+                <mat-error *ngIf="laonAmount.touched && !laonAmount.valid">Please Enter the laon Amount</mat-error>
                 <mat-error *ngIf="laonAmount.errors?.pattern">Please Enter numbers only</mat-error>
             </mat-form-field>
              <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
@@ -30,7 +30,7 @@
                 <mat-error *ngIf="loanPeriod.touched && !loanPeriod.valid">Please select the loan period</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
-                <mat-label for="">PaymentFrequency</mat-label>
+                <mat-label for="">Payment Frequency</mat-label>
                 <mat-select required #paymentFrequency="ngModel" ngModel name="paymentFrequency" placeholder="Select the paymentFrequency">
                     <mat-option>---</mat-option>
                     <mat-option *ngFor="let item of paymentFreq; index as i" [value]="item">
@@ -40,13 +40,13 @@
                 <mat-error *ngIf="paymentFrequency.touched && !paymentFrequency.valid">Please select the paymentFrequency</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
-                <mat-label for="">InterestRate</mat-label>
+                <mat-label for="">Interest Rate</mat-label>
                 <input style="height: 20px;" matInput #interestRate="ngModel" ngModel name="interestRate" type="text" placeholder="Enter the interestRate" [pattern]="amount_pattern" required>
                 <mat-error *ngIf="interestRate.touched && !interestRate.valid">Please Enter the interestRate</mat-error>
                 <mat-error *ngIf="interestRate.errors?.pattern">Please Enter numbers only</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
-                <mat-label for="">paymentTerm</mat-label>
+                <mat-label for="">payment Term</mat-label>
                 <mat-select required #paymentTerm="ngModel" ngModel name="paymentTerm" placeholder="Select the paymentTerm">
                     <mat-option>---</mat-option>
                     <mat-option *ngFor="let item of paymentTermSelect; index as i" [value]="item">

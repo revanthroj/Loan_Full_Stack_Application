@@ -13,7 +13,7 @@ export class PaymentScheduleComponent implements OnInit {
   tobj: any[] = [];
   p: number = 1;
   username: any = 'Revanth';
-
+  searchText: any;
   constructor(private service: HttpService) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class PaymentScheduleComponent implements OnInit {
   }
   onPay(name: string) {
     this.username = name;
-    this.service.getPaymentDue(this.username).subscribe((res: any) => {
+    this.service.getPaymentStatus(this.username).subscribe((res: any) => {
       this.tobj = res;
       console.log(this.tobj);
     });

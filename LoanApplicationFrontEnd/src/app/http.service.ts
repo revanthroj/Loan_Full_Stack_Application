@@ -20,7 +20,7 @@ export class HttpService {
     // console.log(obj);
     return this.http.get(`${this.Url}paidStatus/` + obj);
   }
-  getPaymentSyayus(obj: any) {
+  getPaymentStatus(obj: any) {
     // console.log(obj);
     return this.http.get(`${this.Url}paid/` + obj);
   }

@@ -1,4 +1,4 @@
-
+<!-- <app-header></app-header> -->
 <div>
 <table class="table table-bordered table-hover">
     <thead class="table-primary">
@@ -19,13 +19,13 @@
         <td class="table-primary">{{item.customerId}}</td>
         <td>{{item.username}}</td>
         <td>{{item.loanAmount | number:'1.2-2'}}</td>
-        <td>{{item.loanPeriod}}</td>
+        <td>{{item.loanPeriod + " Months"}}</td>
         <td>{{item.tradeDate}}</td>
         <td>{{item.loanStartDate}}</td>
         <td> {{item.maturityDate}} </td>
-        <td>{{item.interestRate}}</td>
-        <td> {{item.paymentFrequency}} </td>
-        <td> {{item.paymentSchedule}}
+        <td>{{item.interestRate +" %"}}</td>
+        <td> {{item.paymentFrequency+" Month Once"}} </td>
+        <td> {{item.paymentSchedule + " Payments"}}
         </td>
         <td>{{item.paymentTerm}}
         </td>
@@ -36,6 +36,5 @@
 <pagination-controls (pageChange)="p = $event" style="float:left;"></pagination-controls>
 </div>
 </div>
-<button (click)="onPaymentSchedule()">View paymentSchedule</button>
 
-
+<button (click)="onPaymentSchedule()">View payment schedules</button>

@@ -18,6 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './header/header.component';
 import { SidemenubarComponent } from './sidemenubar/sidemenubar.component';
 import { ToastrModule } from 'ngx-toastr';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +45,11 @@ import { ToastrModule } from 'ngx-toastr';
     NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 2000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
