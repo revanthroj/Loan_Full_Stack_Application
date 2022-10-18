@@ -30,9 +30,14 @@ export class LoandetailsComponent implements OnInit {
   }
 
   getLoanDetails() {
-    this.service.getLoan().subscribe((res: any) => {
-      this.arObj = res;
-      // console.log(res);
-    });
+    this.service.getLoan().subscribe(
+      (res: any) => {
+        this.arObj = res;
+        // console.log(res);
+      },
+      (error) => {
+        this.router.navigate(['/notFound']);
+      }
+    );
   }
 }

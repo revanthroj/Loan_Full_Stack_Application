@@ -12,7 +12,7 @@ export class PaymentScheduleComponent implements OnInit {
   arObj: any[] = [];
   tobj: any[] = [];
   p: number = 1;
-  username: any = 'Revanth';
+  username: any;
   searchText: any;
   constructor(private service: HttpService) {}
 
@@ -35,8 +35,15 @@ export class PaymentScheduleComponent implements OnInit {
     });
   }
   onPay(name: string) {
-    this.username = name;
-    this.service.getPaymentStatus(this.username).subscribe((res: any) => {
+    // this.username = name;
+    this.service.getPaymentStatus(name).subscribe((res: any) => {
+      this.tobj = res;
+      console.log(this.tobj);
+    });
+  }
+  todayPaymentStatus(name: string) {
+    // this.username = name;
+    this.service.getPaymentDue(name).subscribe((res: any) => {
       this.tobj = res;
       console.log(this.tobj);
     });

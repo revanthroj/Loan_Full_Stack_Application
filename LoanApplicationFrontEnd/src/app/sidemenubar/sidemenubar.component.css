@@ -27,7 +27,7 @@ body{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 100;
 }
 .sidebar.close{
     width: 88px;
@@ -55,7 +55,7 @@ body{
     visibility: visible;
     top:225px;
     position: absolute;
-    transform: translate(-50%,-10%) scale(0.7); 
+    transform: translate(-50%,-10%) scale(0.7);
 }
 
 .sidebar li{

@@ -30,6 +30,13 @@
                 <mat-error *ngIf="loanPeriod.touched && !loanPeriod.valid">Please select the loan period</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
+                <mat-label for="">Loan start in</mat-label>
+                <input style="height: 20px;" matInput #loanStartDelay="ngModel" ngModel name="loanStartDelay" type="text" placeholder="Enter number 0-10"
+                 min="0" max="10" required>
+                <mat-error *ngIf="loanStartDelay.touched && !loanStartDelay.valid">Please Enter the loan start day within 10 days</mat-error>
+                <!-- <mat-error *ngIf="loanStartDelay.errors?.pattern">Please Enter numbers only</mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                 <mat-label for="">Payment Frequency</mat-label>
                 <mat-select required #paymentFrequency="ngModel" ngModel name="paymentFrequency" placeholder="Select the paymentFrequency">
                     <mat-option>---</mat-option>
@@ -41,7 +48,8 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="myclass" [color]="'accent'">
                 <mat-label for="">Interest Rate</mat-label>
-                <input style="height: 20px;" matInput #interestRate="ngModel" ngModel name="interestRate" type="text" placeholder="Enter the interestRate" [pattern]="amount_pattern" required>
+                <input style="height: 20px;" matInput #interestRate="ngModel" ngModel name="interestRate" type="text" placeholder="Enter the interestRate"
+                [pattern]="interestPattern" min="1" max="10" required>
                 <mat-error *ngIf="interestRate.touched && !interestRate.valid">Please Enter the interestRate</mat-error>
                 <mat-error *ngIf="interestRate.errors?.pattern">Please Enter numbers only</mat-error>
             </mat-form-field>

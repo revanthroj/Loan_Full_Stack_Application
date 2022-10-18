@@ -1,7 +1,8 @@
 <!-- <app-header></app-header><br> -->
-    <div class="search-hero">
-      <label for="">Search Here:</label>&nbsp;
-      <input type="text" name="search" [(ngModel)]="searchText" placeholder="Type to search">
+<label for="">Search Here:</label>&nbsp;
+<input type="text" name="search" [(ngModel)]="searchText" placeholder="Type to search">
+   
+<div class="search-hero">
       <table class="table table-bordered table-hover">
     <thead class="table-primary">
       <th>ID</th>
@@ -11,11 +12,12 @@
       <th>projectedInterest</th>
       <th>PaymentStatus</th>
       <th>PaymentAmount</th>
+      <th>Schedule status</th>
     </thead>
     <tbody class="table-active">
       <tr *ngFor="let item of tobj | filter:searchText;">
         <td class="table-primary">{{item.paymentId}}</td>
-         <td>{{item.username}}</td>
+         <td (username)=item.username>{{item.username}}</td>
         <td>{{item.paymentDate}}</td>
         <td>{{item.principal | number:'1.2-2'}}</td>
         <td>{{item.projectedInterest | number:'1.2-2'}}</td>
@@ -23,7 +25,11 @@
           <button (click)="onPay(item.username)">pay</button>
         </td>
         <td>{{item.paymentAmount | number:'1.2-2'}}</td>
+        <td>
+          <button (click)="todayPaymentStatus(item.username)">Status</button>
+        </td>
       </tr>
     </tbody>
 </table>
-    </div>
+</div> 
+ &nbsp; 

@@ -11,7 +11,9 @@ import { HttpService } from '../http.service';
 })
 export class ApplyloanComponent implements OnInit {
   amount_pattern: any = /^[.0-9]+$/;
+  interestPattern: any = /^[1-9]+([.0-9])*$/;
   name_pattern: any = /^[a-zA-z]+([\s.][a-zA-Z]+)*$/;
+
   loanPeriodSelect: number[] = [12, 24, 36, 48, 60, 72];
   paymentTermSelect: string[] = ['Interest Only', 'Even Principle'];
   paymentFreq: number[] = [1, 3, 6, 12];
@@ -29,6 +31,7 @@ export class ApplyloanComponent implements OnInit {
       username: f.value.username,
       loanAmount: f.value.laonAmount,
       loanPeriod: f.value.loanPeriod,
+      loanStartDelay: f.value.loanStartDelay,
       paymentFrequency: f.value.paymentFrequency,
       interestRate: f.value.interestRate,
       paymentTerm: f.value.paymentTerm,
