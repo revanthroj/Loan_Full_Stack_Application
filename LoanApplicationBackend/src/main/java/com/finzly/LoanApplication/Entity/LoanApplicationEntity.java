@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.NotFound;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name = "loan_application_entity")
 public class LoanApplicationEntity {
 @NotNull(message = "Entity shouldn't be null")
 @NotFound

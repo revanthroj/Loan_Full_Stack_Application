@@ -6,11 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.finzly.LoanApplication.paymentStatusEnum.PaymentStatus;
 
 
 @Entity
+@Table(name = "payment_schedule_entity")
 public class PaymentScheduleEntity {
 	
 	@Id
